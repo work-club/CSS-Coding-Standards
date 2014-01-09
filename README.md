@@ -58,6 +58,8 @@ will cover a number of patterns and features that aren't possible in native CSS.
 
 ## File Structure
 
+The following is the base folder structure for any project. The assets folders location may vary, but would 
+ideally sit in a development folder with only the compiled CSS source being deployed to the build folder.
 
     assets
         ├── images
@@ -86,9 +88,42 @@ will cover a number of patterns and features that aren't possible in native CSS.
         └── vendor
 
 
+#### Images
+The only convention to follow here is the sprites folder. All individual sprite image should be stored in this folder 
+which compass will use to compile a spritesheet. All sprites must be in .png format. If you are unfamiliar with 
+[Compass](http://compass-style.org/) and [compiling spritesheets](http://compass-style.org/help/tutorials/spriting/) please refer to the documentation before using this. If using a spritesheet from a third party it must go in the 
+'vendor' folder. If using an existing manual spritesheet create a separate folder with the images directory.
+
+#### Scripts 
+These guide lines make no assumptions of JavaScripts. JavaScript coding conventions are covered [elsewhere](#).
+
+#### Styles
+The styles folder has two sub-folders: scss and css. All uncompiled SASS files exist in this directory. The folder 
+must be named 'scss' as this is the SASS syntax used. SASS will compile to a minified single .css file that will be 
+outputted to the 'css' folder. 
+
+The 'base' folder contains all boilerplate, resets and normalisation stylesheets aswell as constants and typography. 
+The specifics of these will be covered later.
+
+#### Vendor
+
+This folder will contain all third party JavaScript or CSS code. 
+
 ## Formatting
 
 ### Formatting Rules
+
+The following are basic formatting rules that MUST be followed: 
+
+* Use tabs consisting of 4 spaces.
+* 1 space after : in property declarations.
+* 1 space before { in rule declarations.
+* 1 line return after { in rule declations.
+* 1 line return after } in rule declations.
+* Curley braces must appear on their own line.
+* Use hex color codes (#000).
+* All propery declartions and rule declations to be lower case.
+* Rule declarations to use dashes (-) in place of spaces.
 
 ## Conventions
 
