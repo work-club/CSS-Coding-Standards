@@ -18,6 +18,8 @@ This is the table of content
     * [Naming](#naming)
     * [IDs vs Classes](#ids-vs-classes)
     * [Depth of aplicability](#depth-of-aplicability)
+    * [Selector intent](#selector-intent)
+    * [Project dependencies](#project-dependencies)
 * [Media](#media)
     * [Image naming](#image-naming)
     * [Sprite compilation](#sprite-compilation)
@@ -208,6 +210,10 @@ The concept of selector intent is related to the above section. Classes should t
 Selector intend and aplicability should go hand in hand.
 
 Please refer to [this article](http://csswizardry.com/2012/07/shoot-to-kill-css-selector-intent/) for more information on the subject.
+ 
+### Project dependencies
+
+As we assume the use of SASS, please make sure you provide documentation for all compiling rules. If you use Grunt, ensure your Grunt.js file is clearly visible and relevant build steps and clearly stated. In this default build, there is a 'watch' file. This documents how to compile the SASS for a base build and should ***always*** be present in builds where SASS is required and Grunt is not being used.
  
 ## Media
 
