@@ -5,8 +5,6 @@ Work Clubs CSS coding standards &amp; guidelines for front-end projects
 
 ### Table of contents
 
-This is the table of content
-
 * [Overview](#overview)
     * [What this guide is for](#what-this-guide-is-for)
     * [What this isn't for](#what-this-isnt-for)
@@ -100,7 +98,7 @@ All individual sprite image should be stored in the 'sprites' folder which compa
 All furniture images that are required for backgrounds, but not as a spritesheet, should be stored in a background-images folder.
 
 #### Scripts 
-These guide lines make no assumptions of JavaScripts. JavaScript coding conventions are covered [elsewhere](#).
+These guide lines make no assumptions of JavaScripts. JavaScript coding conventions are covered [elsewhere](https://github.com/work-club/JavaScript-Standards).
 
 #### Styles
 The styles folder has two sub-folders: scss and css. All uncompiled SASS files exist in this directory. The folder 
@@ -381,3 +379,17 @@ It is acceptable for trump classes to contain ` !important ` for the means to ov
 ```
 
 If you find that this is the only way for your code to work, it is likely that your have either specified the _trumps.scss too early, or have too many levels of aplicability in your classes.
+
+
+## Resources
+
+The following is a list of blogs, books and existing style guides that have incluenced our approach to our work.
+
+* [Methodology - SMACSS](http://smacss.com/)
+* [Methodology - BEM](http://bem.info/)
+* [Tools - SASS](http://sass-lang.com/)
+* [Tools - Compass](http://compass-style.org/)
+* [Tools - Grunt](http://gruntjs.com/)
+* [Guide - CSS wizardy](https://github.com/garystevens/CSS-Guidelines)
+* [Blog - CSS wizardy](http://csswizardry.com/)
+* [Blog - CSS Tricks](http://css-tricks.com/)
