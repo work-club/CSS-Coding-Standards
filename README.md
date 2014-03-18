@@ -46,26 +46,28 @@ and anti-patterns and explain why these should be used or ignored.
 
 ### What this isnt for
 
-This isn't a style guide. This isn't a pattern guide, although we do provide some examples of common patterns 
+This isn't a style guide or a pattern guide, although we do provide some examples of common patterns 
 and how they should be approached, this document won't go in to specific details about things like 
-[SMACSS](http://www.smacss.com) or [BEM](http://bem.info/method/). The use of those methodologies will vary 
-from project to project whereas this guide is intended to be followed on any project, regardless of size or 
-complexity.
+[SMACSS](http://www.smacss.com) or [BEM](http://bem.info/method/). Whilst we do outline specific areas where these methodologies have influenced this document, we do not go in to specifics on what they are.
 
 ### Assumptions
 
 This guide assumes you are using [SASS](http://www.sass-lang.com) to write and compile your CSS. This guide 
-will cover a number of patterns and features that aren't possible in native CSS. 
+will cover a number of patterns and features that aren't possible in native CSS. We would also recommend you familiarise yourself with the concepts of SMACSS and BEM.
+
+We also rely on Compass to compile sprite assets.
 
 ## File Structure
 
-The following is the base folder structure for any project. The assets folders location may vary, but would 
-ideally sit in a development folder with only the compiled CSS source being deployed to the build folder.
+The following is the base folder structure for any project. The location of this folder may vary, depending on project, but its contents should remain the same.
 
     assets
         ├── images
         │    └── sprites
-        │           └── spritsheet.png
+        │    |    └── spritsheet.png
+        |    |
+        |    └── background-images 
+        |
         ├── scripts
         │    └── app.js
         │
@@ -82,7 +84,7 @@ ideally sit in a development folder with only the compiled CSS source being depl
         │        ├── components
         │        │
         │        ├── trumps
-        │        |   └──_trumps.scss
+        │        |   └── _trumps.scss
         │        │   
         │        ├── styles.scss
         │        │
@@ -93,10 +95,9 @@ ideally sit in a development folder with only the compiled CSS source being depl
 
 
 #### Images
-The only convention to follow here is the sprites folder. All individual sprite image should be stored in this folder 
-which compass will use to compile a spritesheet. All sprites must be in .png format. If you are unfamiliar with 
-[Compass](http://compass-style.org/) and [compiling spritesheets](http://compass-style.org/help/tutorials/spriting/) please refer to the documentation before using this. If using a spritesheet from a third party it must go in the 
-'vendor' folder. If using an existing manual spritesheet create a separate folder with the images directory.
+All individual sprite image should be stored in the 'sprites' folder which compass will use to compile a spritesheet. All sprites must be in .png format. If you are unfamiliar with [Compass](http://compass-style.org/) and [compiling spritesheets](http://compass-style.org/help/tutorials/spriting/) please refer to the documentation before using this. If using a spritesheet from a third party it must go in the 'vendor' folder. If using an existing manual spritesheet create a separate folder with the images directory.
+
+All furniture images that are required for backgrounds, but not as a spritesheet, should be stored in a background-images folder.
 
 #### Scripts 
 These guide lines make no assumptions of JavaScripts. JavaScript coding conventions are covered [elsewhere](#).
