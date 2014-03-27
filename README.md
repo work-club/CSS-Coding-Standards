@@ -110,7 +110,7 @@ The specifics of these will be covered later.
 
 _styles.scss should be structured in the following order:
 
-```
+```css
    /* SPRITE SHEET IMPORT */
    @import "../images/sprites/*.png";
    @include all-sprites-sprites;
@@ -168,10 +168,12 @@ CSS should not directly reference elements. Each element that requires styling s
 
 When naming elements, be sure to follow the BEM naming pattern:
 
+```css
     .block {}
     .block__element {}
-    .block--modifier {}    
-    
+    .block--modifier {}
+```
+
 ***block*** is for high level elements, such as `.primary-navigation`.
 
 ***element*** would be an item within the block, such as `.primary-navigation__link`.
@@ -244,7 +246,7 @@ All variables should be defined in either ***_constants.scss*** or *** _palette.
 As per the rules on [applicability](#depth-of-applicability), nesting in SASS should be limited to only situations where it is necessary. For components, it is permitted to use the name of the file (for example, 'primary-nav') as a namespace and nest all elements inside this. Nesting of pseudo states and pseudo elements is also permitted, for readability. In all other situations maintain indentation using tabs to visually signify the elements are related, i.e.:
 
 ***GOOD:***
-```
+```css
    .primary-navigation {
       /* example */
    }
@@ -254,7 +256,7 @@ As per the rules on [applicability](#depth-of-applicability), nesting in SASS sh
       }
 ```
 ***BAD:***
-```
+```css
    .primary-navigation {
       /* example */
    
@@ -267,7 +269,7 @@ As per the rules on [applicability](#depth-of-applicability), nesting in SASS sh
 The following examples would be accepted:
 
 ***GOOD:***
-```
+```css
    .primary-navigation {
       /* example */
    }
@@ -294,7 +296,7 @@ Write markup before writing any styles. This will avoid the possibility of redun
 
 ***GOOD: _primary-navigation.scss***
 
-```
+```css
    .navigation {
       margin: 10px 0 0 0;
    
@@ -306,7 +308,7 @@ Write markup before writing any styles. This will avoid the possibility of redun
 
 ***BAD: _header.scss***
 
-```
+```css
    .header {
       
       .navigation {
@@ -323,7 +325,7 @@ All components should be built independent of widths and heights. The structure 
 ### OOCSS
 Where possible, look for instances where rules or patterns can be abstracted into reusable sections. OOCSS classes should be mainly structure and not 'skin'. Consider the following example:
 
-```
+```css
    (in _primary-navigation.scss)
 
    .primary-navigation {
@@ -349,7 +351,7 @@ Where possible, look for instances where rules or patterns can be abstracted int
 
 The classes .secondary-list and .primary-list could both be removed and replaced with the following:
 
-```
+```css
    .vertical-list {
       margin: 0;
       padding: 0;
@@ -362,7 +364,7 @@ Trump classes are classes that can be applied to any component to override speci
 
 The following is an example of a trump class:
 
-```
+```css
    .is-hidden {
       display: none;
    }
@@ -370,7 +372,7 @@ The following is an example of a trump class:
 
 It is acceptable for trump classes to contain ` !important ` for the means to override a property. Trump classes should not reference any classes, for example:
 
-```
+```css
    .is-hidden {
       display: none;
       
