@@ -15,7 +15,7 @@ Work Clubs CSS coding standards &amp; guidelines for front-end projects
 * [Conventions](#conventions)
     * [Naming](#naming)
     * [IDs vs Classes](#ids-vs-classes)
-    * [Depth of aplicability](#depth-of-aplicability)
+    * [Depth of applicability](#depth-of-aplicability)
     * [Selector intent](#selector-intent)
     * [Project dependencies](#project-dependencies)
 * [Media](#media)
@@ -23,7 +23,7 @@ Work Clubs CSS coding standards &amp; guidelines for front-end projects
     * [Sprite compilation](#sprite-compilation)
 * [CSS3](#css3)
     * [Progressive enhancement](#progressive-enhancement)
-* [Proprocessors](#preprocessors)
+* [Preprocessors](#preprocessors)
 * [Patterns](#patterns)
     * [Components](#components)
     * [Layouts](#layouts)
@@ -42,7 +42,7 @@ This document is to be followed by all developers writing CSS on a project, rega
 intended to be followed to provide consistency across all projects and developers. It will point out good patterns 
 and anti-patterns and explain why these should be used or ignored. 
 
-### What this isnt for
+### What this isn't for
 
 This isn't a style guide or a pattern guide, although we do provide some examples of common patterns 
 and how they should be approached, this document won't go in to specific details about things like 
@@ -93,19 +93,19 @@ The following is the base folder structure for any project. The location of this
 
 
 #### Images
-All individual sprite image should be stored in the 'sprites' folder which compass will use to compile a spritesheet. All sprites must be in .png format. If you are unfamiliar with [Compass](http://compass-style.org/) and [compiling spritesheets](http://compass-style.org/help/tutorials/spriting/) please refer to the documentation before using this. If using a spritesheet from a third party it must go in the 'vendor' folder. If using an existing manual spritesheet create a separate folder with the images directory.
+All individual sprite images should be stored in the 'sprites' folder which Compass will use to compile a spritesheet. All sprites must be in .png format. If you are unfamiliar with [Compass](http://compass-style.org/) and [compiling spritesheets](http://compass-style.org/help/tutorials/spriting/) please refer to the documentation before using this. If using a spritesheet from a third party it must go in the 'vendor' folder. If using an existing manual spritesheet create a separate folder with the images directory.
 
-All furniture images that are required for backgrounds, but not as a spritesheet, should be stored in a background-images folder.
+All "furniture" images that are required for backgrounds, but not as a spritesheet, should be stored in a background-images folder.
 
 #### Scripts 
-These guide lines make no assumptions of JavaScripts. JavaScript coding conventions are covered [elsewhere](https://github.com/work-club/JavaScript-Standards).
+These guide lines make no assumptions of JavaScript. JavaScript coding conventions are covered [elsewhere](https://github.com/work-club/JavaScript-Standards).
 
 #### Styles
 The styles folder has two sub-folders: scss and css. All uncompiled SASS files exist in this directory. The folder 
 must be named 'scss' as this is the SASS syntax used. SASS will compile to a minified single .css file that will be 
 outputted to the 'css' folder. 
 
-The 'base' folder contains all boilerplate, resets and normalisation stylesheets aswell as constants and typography. 
+The 'base' folder contains all boilerplate, resets and normalisation stylesheets as well as constants and typography. 
 The specifics of these will be covered later.
 
 _styles.scss should be structured in the following order:
@@ -150,17 +150,17 @@ The following are basic formatting rules that MUST be followed:
 * Use tabs consisting of 4 spaces.
 * 1 space after : in property declarations.
 * 1 space before { in rule declarations.
-* 1 line return after { in rule declations.
-* 1 line return after } in rule declations.
+* 1 line return after { in rule declarations.
+* 1 line return after } in rule declarations.
 * Curley braces must appear on their own line.
 * Use hex color codes (#000).
-* All propery declartions and rule declations to be lower case.
+* All property declarations and rule declarations to be lower case.
 * Rule declarations to use dashes (-) in place of spaces.
 
 ## Conventions
-The conventions and naming of these guidelines is reliant on the practices setout in [BEM](http://bem.info/method/), those not aware of BEM should familiarise themselves with the main principles first. Only some principles of BEM have been adopted in this document. 
+The conventions and naming of these guidelines is reliant on the practices set out in [BEM](http://bem.info/method/), those not aware of BEM should familiarise themselves with the main principles first. Only some principles of BEM have been adopted in this document. 
 
-The methodology covered in this guide should be implemented in all projects, without exception. Projects are constantly subject to change and it is not always easy to know what size project may or maynot require a scalable solution. With that in mind, all projects should be built assuming the need for scalability. 
+The methodology covered in this guide should be implemented in all projects, without exception. Projects are constantly subject to change and it is not always easy to know what size project may or may not require a scalable solution. With that in mind, all projects should be built assuming the need for scalability. 
 
 ### Naming
 
@@ -170,9 +170,9 @@ When naming elements, be sure to follow the BEM naming pattern:
 
     .block {}
     .block__element {}
-    .block--modifier {}
+    .block--modifier {}    
     
-***block*** is for highlevel elements, such as `.primary-navigation`.
+***block*** is for high level elements, such as `.primary-navigation`.
 
 ***element*** would be an item within the block, such as `.primary-navigation__link`.
 
@@ -185,28 +185,28 @@ IDs should NEVER be used in CSS for the following reasons:
 
 * IDs tightly couple a style to specific markup, making that element unusable in any other situation.
 * The specificity of that style rule is much harder to override in instances where you need to.
-* An ID is intended to signify a specific item on a page, where as your CSS is more concenred with style over function.
+* An ID is intended to signify a specific item on a page, where as your CSS is more concerned with style over function.
 
-Classes are intended to be resuable, as therefore your CSS should be reusable too.
+Classes are intended to be reusable, as therefore your CSS should be reusable too.
 
-### Depth-of-aplicability
-The 'Depth of aplicability' is the number of selectors used in a rule. This is a brief overview, but more information is [available](http://smacss.com/book/applicability). Put simply, you should NEVER exceed 4 levels of depth, 3 levels is preffered. 
+### Depth-of-Applicability
+The 'Depth of Applicability' is the number of selectors used in a rule. This is a brief overview, but more information is [available](http://smacss.com/book/applicability). Put simply, you should NEVER exceed 4 levels of depth, 3 levels is preferred. 
 
 Over qualifying selectors with many levels make them harder to amend and tie your CSS specifically to the markup. Take the following example:
 
  `div.nav ul li a {color: red;}`
  
- This markup tighly binds the intended layout to that exact markup. The following would be preffered:
+ This markup tightly binds the intended layout to that exact markup. The following would be preferred:
  
   `.navigation .navigation__navigation-item__link {color: red;}`
     
- In the second example, we reference no elements directly and only go to two levels of aplicability. This means if we have to override the class later, we have more freedom to do so. We only use `.navigation ` to namespace the code as pertaining to the link.
+ In the second example, we reference no elements directly and only go to two levels of applicability. This means if we have to override the class later, we have more freedom to do so. We only use `.navigation ` to namespace the code as pertaining to the link.
  
 ### Selector Intent
 
-The concept of selector intent is related to the above section. Classes should target the elements they wish to change directly, instead of targetting a parent element and drilling down with element selectors. Never assume the markup will not change and instead be explicit and target the elements you intend to target.
+The concept of selector intent is related to the above section. Classes should target the elements they wish to change directly, instead of targeting a parent element and drilling down with element selectors. Never assume the markup will not change and instead be explicit and target the elements you intend to target.
 
-Selector intend and aplicability should go hand in hand.
+Selector intend and applicability should go hand in hand.
 
 Please refer to [this article](http://csswizardry.com/2012/07/shoot-to-kill-css-selector-intent/) for more information on the subject.
  
@@ -241,7 +241,7 @@ It is generally accepted that [SASS](http://sass-lang.com/) will be used on a pr
 
 All variables should be defined in either ***_constants.scss*** or *** _palette.scss***, both of which should be in the ***core*** folder. 
 
-As per the rules on [aplicability](#depth-of-aplicability), nesting in SASS should be limited to only situations where it is necessary. For components, it is permitted to use the name of the file (for example, 'primary-nav') as a namespace and nest all elements inside this. Nesting of pseudo states and pseudo elements is also permitted, for readability. In all other situations maintian intendation using tabs to visually signify the elements are related, ie:
+As per the rules on [applicability](#depth-of-applicability), nesting in SASS should be limited to only situations where it is necessary. For components, it is permitted to use the name of the file (for example, 'primary-nav') as a namespace and nest all elements inside this. Nesting of pseudo states and pseudo elements is also permitted, for readability. In all other situations maintain indentation using tabs to visually signify the elements are related, i.e.:
 
 ***GOOD:***
 ```
@@ -290,9 +290,10 @@ The following examples would be accepted:
 ### Components
 As per [folder structure](#file-structure), code should be organised into components. A component is any part of markup that can be broken in to a self contained item. Components should be written to be as reusable as possible, even if there appears to be no place where they are currently reused, this may change much later in the project.
 
-Write markup before writing any styles. This will avoid the possibility of redundant styles. Maintain a [single responsibility principle](http://en.wikipedia.org/wiki/Single_responsibility_principle) when writing a component to ensure no styling is only being applied to places where it does not make logical sense. In some instances a module will need an override depending on where it appears (i.e. a navigation may have less margin when it appears in the header). When this occurs make sure the override class appears in the file related to the component, like this:
+Write markup before writing any styles. This will avoid the possibility of redundant styles. Maintain a [single responsibility principle](http://en.wikipedia.org/wiki/Single_responsibility_principle) when writing a component to ensure no styling is only being applied to places where it does not make logical sense. In some instances a module will need an override depending on where it appears (i.e. a navigation may have less margin when it appears in the header). When this occurs make sure the override class appears in the file related to the component, like this: 
 
 ***GOOD: _primary-navigation.scss***
+
 ```
    .navigation {
       margin: 10px 0 0 0;
@@ -304,6 +305,7 @@ Write markup before writing any styles. This will avoid the possibility of redun
 ```
 
 ***BAD: _header.scss***
+
 ```
    .header {
       
@@ -316,7 +318,7 @@ Write markup before writing any styles. This will avoid the possibility of redun
 The logic here is that another developer is more likely to check ***_navigation.scss*** for overrides, rather than ***_header.scss***.
 
 ### Layouts
-All components should be built independant of widths and heights. The structure and position of components should be applied by grids, meaning components are flexible within these grid columns. No styles should ever be applied to grids - grids are soley concerned with the layout and structure of content, not the content themselves.
+All components should be built independent of widths and heights. The structure and position of components should be applied by grids, meaning components are flexible within these grid columns. No styles should ever be applied to grids - grids are solely concerned with the layout and structure of content, not the content themselves.
 
 ### OOCSS
 Where possible, look for instances where rules or patterns can be abstracted into reusable sections. OOCSS classes should be mainly structure and not 'skin'. Consider the following example:
@@ -378,12 +380,12 @@ It is acceptable for trump classes to contain ` !important ` for the means to ov
    }
 ```
 
-If you find that this is the only way for your code to work, it is likely that your have either specified the _trumps.scss too early, or have too many levels of aplicability in your classes.
+If you find that this is the only way for your code to work, it is likely that your have either specified the _trumps.scss too early, or have too many levels of applicability in your classes.
 
 
 ## Resources
 
-The following is a list of blogs, books and existing style guides that have incluenced our approach to our work.
+The following is a list of blogs, books and existing style guides that have influenced our approach to our work.
 
 * [Methodology - SMACSS](http://smacss.com/)
 * [Methodology - BEM](http://bem.info/)
